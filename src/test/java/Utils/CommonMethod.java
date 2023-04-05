@@ -1,11 +1,11 @@
 package Utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
@@ -14,6 +14,7 @@ public class CommonMethod {
 
     public static void openBrowserAndLaunchApplication() {
         ConfigReader.readProperties();
+
         String browserType = ConfigReader.getPropertyValue("browserType");
         switch (browserType) {
             case "Chrome":
@@ -36,12 +37,22 @@ public class CommonMethod {
 
         driver.manage().window().maximize();
         driver.get(ConfigReader.getPropertyValue("url"));
-                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
     }
 
 
     public static void closeBrowser() {
         driver.close();
+    }
+
+
+    public static void doClick(WebElement element) {
+        element.click();
+    }
+
+    public static void sendText(WebElement element, String text) {
+        element.clear();
+        element.sendKeys(text);
     }
 
 }

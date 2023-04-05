@@ -7,12 +7,11 @@ import java.util.Properties;
 
 public class ConfigReader {
     static Properties prop;
-    public static  Properties readProperties(){
 
-
+    public static Properties readProperties() {
         try {
             FileInputStream file = new FileInputStream(Constants.PROPERTY_FILE_PATH);
-            prop= new Properties();
+            prop = new Properties();
             prop.load(file);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -23,9 +22,9 @@ public class ConfigReader {
     }
 
 
+    public static String getPropertyValue(String propKey) {
+        return prop.getProperty(propKey);
+    }
 
-    public static String getPropertyValue(String propKey){
-       return prop.getProperty(propKey);
-}
 
 }
