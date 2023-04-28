@@ -6,6 +6,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.sql.SQLOutput;
+
 public class AddEmployee extends CommonMethods {
 
     @When("user clicks on PIM option")
@@ -26,6 +28,8 @@ public class AddEmployee extends CommonMethods {
 
     @When("user enters firstname and middlename and lastname")
     public void user_enters_firstname_and_middlename_and_lastname() {
+
+
 
         //driver.findElement(By.id("firstName")).sendKeys(ConfigReader.getPropertyValue("firstname"));
         //WebElement firstNameTextBox = driver.findElement(By.id("firstName"));
