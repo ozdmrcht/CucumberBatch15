@@ -8,31 +8,29 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddEmployeePage extends CommonMethods {
-
-    @FindBy(id="menu_pim_viewPimModule")
+    @FindBy(id = "menu_pim_viewPimModule")
     public WebElement pimTab;
 
-    @FindBy(id="menu_pim_addEmployee")
+    @FindBy(id = "menu_pim_addEmployee")
     public WebElement eddEmpBtn;
 
-    @FindBy(id="firstName")
+    @FindBy(id = "firstName")
     public WebElement firstNameTextBox;
 
-
-    @FindBy(id="middleName")
+    @FindBy(id = "middleName")
     public WebElement middleNameTextBox;
 
-
-    @FindBy(id="lastName")
+    @FindBy(id = "lastName")
     public WebElement lastNameTextBox;
 
-    @FindBy(id="btnSave")
+    @FindBy(id = "btnSave")
     public WebElement saveBtn;
 
-    public AddEmployeePage(){
+    @FindBy(id = "employeeId")
+    public WebElement empIdLocator;
+
+    public AddEmployeePage() {
         PageFactory.initElements(driver, this);
     }
-
-
 
 }
